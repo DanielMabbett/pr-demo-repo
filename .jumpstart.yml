@@ -1,0 +1,32 @@
+name: pr-demo-api
+
+# ── Jumpstart Pipeline Definition — Pull-Request Trigger Demo ──────────────
+#
+# This pipeline demonstrates the on.pull_request trigger: it runs
+# automatically whenever a pull request is opened, updated (a new commit is
+# pushed), or reopened against the "main" branch, and reports its status
+# directly on the PR's "Checks" tab via the GitHub Checks API — no separate
+# dashboard visit required.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs_on: vm
+    steps:
+      - name: Go version
+        run: go version
+
+      - name: Download dependencies
+        run: go mod download
+
+      - name: Build
+        run: go build ./...
+
+      - name: Test
+        run: go test -v -count=1 ./...
+
+      - name: Vet
+        run: go vet ./...
