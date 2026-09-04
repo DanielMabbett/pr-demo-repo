@@ -7,6 +7,9 @@ jobs:
   build-and-test:
     runs_on: vm
     steps:
+      - name: Checkout
+        uses: checkout
+
       - name: Go version
         run: go version
 
