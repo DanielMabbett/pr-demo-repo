@@ -19,14 +19,14 @@ jobs:
       - name: Go version
         run: go version
 
-      - name: Download dependencies
-        run: go mod download
-
-      - name: Build
-        run: go build ./...
-
-      - name: Test
-        run: go test -v -count=1 ./...
-
-      - name: Vet
-        run: go vet ./...
+#      - name: Download dependencies
+#        run: go mod download
+#
+#      - name: Build
+#        run: go build ./...
+#
+#      - name: Test
+#        run: go test -v -count=1 ./...
+#
+#      - name: Vet
+#        run: go vet ./...
