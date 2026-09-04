@@ -1,6 +1,6 @@
 # pr-demo-repo
 
-Adding some comment5
+Adding some comment6
 
 A minimal Go HTTP service used to demonstrate Jumpstart's **pull-request
 trigger + GitHub Checks status reporting** feature.
